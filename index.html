@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="author" content="KAMDEM FOKAM Arthur - Université de Ngaoundéré">
+    <meta name="description" content="TP Individuel - Calcul TVA 17% & Conversion Devises">
+    <title>TP Individuel • Calcul TVA 17% • Dr. KOTVA Samuel</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="background-ornament"></div>
+    
+    <div class="glass-panel">
+        <!-- ========================================== -->
+        <!--   EN-TÊTE UNIVERSITÉ AVEC LOGO              -->
+        <!-- ========================================== -->
+        <div class="university-header">
+            <div class="logo-container">
+                <img src="https://www.univ-ndere.cm/sites/default/files/logo_un.png" 
+                     alt="Université de Ngaoundéré" 
+                     class="univ-logo"
+                     onerror="this.onerror=null; this.src='assets/logo-universite-ngaoundere.png';">
+                <div class="academic-year">2025-2026</div>
+            </div>
+            <div class="university-details">
+                <h2 class="univ-name">Université de Ngaoundéré</h2>
+                <p class="univ-motto">Scientia - Libertas - Excellentia</p>
+                <div class="faculty-badge">
+                    <i class="fas fa-microchip"></i>
+                    <span>Faculté des Sciences • Département d'Informatique</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========================================== -->
+        <!--   ENSEIGNANT RESPONSABLE (VISIBLE)          -->
+        <!-- ========================================== -->
+        <div class="enseignant-banner">
+            <div class="enseignant-avatar">
+                <i class="fas fa-chalkboard-teacher"></i>
+            </div>
+            <div class="enseignant-info">
+                <h3 class="enseignant-nom">
+                    <i class="fas fa-user-tie"></i> 
+                    Dr. KOTVA Samuel
+                    <span class="enseignant-badge">Enseignant Responsable</span>
+                </h3>
+                <p class="enseignant-details">
+                    <span><i class="fas fa-book"></i> Cours: INF303 - Algorithmique & Programmation Web</span>
+                    <span><i class="fas fa-calendar"></i> Semestre 6 • Année 2025-2026</span>
+                    <span><i class="fas fa-clock"></i> TP N°1: Calcul TVA 17% & Conversion Devises</span>
+                </p>
+            </div>
+        </div>
+
+        <!-- ========================================== -->
+        <!--   CARTE ÉTUDIANT (DÉMARQUAGE)              -->
+        <!-- ========================================== -->
+        <div class="student-premium-card">
+            <div class="student-photo">
+                <i class="fas fa-user-astronaut"></i>
+            </div>
+            <div class="student-details">
+                <h3 class="student-fullname">
+                    ADAM IDRISS KESSSOU
+
+                </h3>
+                <div class="student-grid-info">
+                    <span class="info-item"><i class="fas fa-id-card"></i> 23B048FS</span>
+                    <span class="info-item"><i class="fas fa-graduation-cap"></i> L3 Informatique</span>
+                    <span class="info-item"><i class="fas fa-users"></i>TPE N°1</span>
+                    <span class="info-item"><i class="fas fa-envelope"></i> arthur.kamdem@univ-ndere.cm</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========================================== -->
+        <!--   TITRE DU TP                               -->
+        <!-- ========================================== -->
+        <header class="premium-header">
+            <div class="header-accent"></div>
+            <h1>
+                <span class="thin">Calcul</span> 
+                <span class="bold">TVA 17%</span> 
+                <span class="badge">Multi-Devises</span>
+            </h1>
+            <p class="subtitle">
+                <i class="fas fa-calculator"></i> 
+                Travail Pratique Individuel • Conversion automatique • Stockage persistant
+            </p>
+        </header>
+
+        <main>
+            <form id="formulairePrincipal" onsubmit="return false;">
+                
+                <!-- ========================================== -->
+                <!--   SECTION 1 : TYPE D'UTILISATEUR            -->
+                <!-- ========================================== -->
+                <div class="form-section">
+                    <div class="section-title">
+                        <i class="fas fa-user-tag"></i> 
+                        <span>Type d'utilisateur (Réduction applicable)</span>
+                        <span class="required-badge">* Obligatoire</span>
+                    </div>
+                    
+                    <div class="user-type-selector">
+                        <label class="radio-card">
+                            <input type="radio" name="typeUtilisateur" value="etudiant" checked onchange="mettreAJourReduction()">
+                            <span class="radio-content">
+                                <i class="fas fa-user-graduate"></i>
+                                <strong>Étudiant</strong>
+                                <small>Réduction 10%</small>
+                            </span>
+                        </label>
+                        
+                        <label class="radio-card">
+                            <input type="radio" name="typeUtilisateur" value="enseignant" onchange="mettreAJourReduction()">
+                            <span class="radio-content">
+                                <i class="fas fa-chalkboard-user"></i>
+                                <strong>Enseignant</strong>
+                                <small>Réduction 15%</small>
+                            </span>
+                        </label>
+                        
+                        <label class="radio-card">
+                            <input type="radio" name="typeUtilisateur" value="personnel" onchange="mettreAJourReduction()">
+                            <span class="radio-content">
+                                <i class="fas fa-user-tie"></i>
+                                <strong>Personnel</strong>
+                                <small>Réduction 5%</small>
+                            </span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- ========================================== -->
+                <!--   SECTION 2 : COORDONNÉES                   -->
+                <!-- ========================================== -->
+                <div class="form-section">
+                    <div class="section-title">
+                        <i class="fas fa-address-card"></i> 
+                        <span>Coordonnées personnelles</span>
+                    </div>
+                    
+                    <div class="flex-row-2">
+                        <div class="field-group floating-label">
+                            <input type="text" id="nom" name="nom" placeholder=" " autocomplete="family-name" required>
+                            <label for="nom"><i class="fas fa-user"></i> Nom *</label>
+                            <div class="field-border"></div>
+                        </div>
+                        <div class="field-group floating-label">
+                            <input type="text" id="prenom" name="prenom" placeholder=" " autocomplete="given-name" required>
+                            <label for="prenom"><i class="fas fa-user-tag"></i> Prénom *</label>
+                            <div class="field-border"></div>
+                        </div>
+                    </div>
+
+                    <div class="flex-row-2">
+                        <div class="field-group floating-label">
+                            <input type="tel" id="telephone" name="telephone" placeholder=" " 
+                                   autocomplete="tel-national" pattern="[0-9]{9,15}" required>
+                            <label for="telephone"><i class="fas fa-phone-alt"></i> Téléphone *</label>
+                            <div class="field-border"></div>
+                            <small class="field-hint">Format: 6XXXXXXXX ou 2XXXXXXXX</small>
+                        </div>
+                        <div class="field-group floating-label">
+                            <input type="email" id="email" name="email" placeholder=" " autocomplete="email" required>
+                            <label for="email"><i class="fas fa-at"></i> Email *</label>
+                            <div class="field-border"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ========================================== -->
+                <!--   SECTION 3 : DEVISES (ORDRE ALPHABÉTIQUE)  -->
+                <!-- ========================================== -->
+                <div class="form-section">
+                    <div class="section-title">
+                        <i class="fas fa-globe-africa"></i> 
+                        <span>Choix de la devise</span>
+                    </div>
+                    
+                    <div class="field-group">
+                        <label for="deviseSelect"><i class="fas fa-money-bill-wave"></i> Devise de paiement</label>
+                        <select id="deviseSelect" class="premium-select" onchange="changerDevise()">
+                            <optgroup label="Afrique">
+                                <option value="XAF" selected>🇨🇲 CFA - Franc CFA (BEAC)</option>
+                                <option value="XOF">🌍 XOF - Franc CFA (BCEAO)</option>
+                                <option value="NGN">🇳🇬 NGN - Naira Nigérian</option>
+                                <option value="ZAR">🇿🇦 ZAR - Rand Sud-Africain</option>
+                                <option value="EGP">🇪🇬 EGP - Livre Égyptienne</option>
+                                <option value="MAD">🇲🇦 MAD - Dirham Marocain</option>
+                            </optgroup>
+                            <optgroup label="Amériques">
+                                <option value="USD">🇺🇸 USD - Dollar Américain</option>
+                                <option value="CAD">🇨🇦 CAD - Dollar Canadien</option>
+                                <option value="BRL">🇧🇷 BRL - Real Brésilien</option>
+                            </optgroup>
+                            <optgroup label="Asie">
+                                <option value="CNY">🇨🇳 CNY - Yuan Chinois</option>
+                                <option value="JPY">🇯🇵 JPY - Yen Japonais</option>
+                                <option value="INR">🇮🇳 INR - Roupie Indienne</option>
+                                <option value="KRW">🇰🇷 KRW - Won Sud-Coréen</option>
+                            </optgroup>
+                            <optgroup label="Europe">
+                                <option value="EUR">🇪🇺 EUR - Euro</option>
+                                <option value="GBP">🇬🇧 GBP - Livre Sterling</option>
+                                <option value="CHF">🇨🇭 CHF - Franc Suisse</option>
+                                <option value="RUB">🇷🇺 RUB - Rouble Russe</option>
+                            </optgroup>
+                            <optgroup label="Moyen-Orient">
+                                <option value="AED">🇦🇪 AED - Dirham des Émirats</option>
+                                <option value="SAR">🇸🇦 SAR - Riyal Saoudien</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                    
+                    <div class="taux-affichage">
+                        <i class="fas fa-exchange-alt"></i>
+                        <span id="tauxActuel">Taux: 1 EUR = 655.957 XAF</span>
+                    </div>
+                </div>
+
+                <!-- ========================================== -->
+                <!--   SECTION 4 : CALCUL TVA 17% (FIXE)         -->
+                <!-- ========================================== -->
+                <div class="form-section highlight-section">
+                    <div class="section-title">
+                        <i class="fas fa-calculator"></i> 
+                        <span>Travail demandé : Calcul TVA 17% (Taux fixe)</span>
+                        <span class="script-badge">calculerTVA()</span>
+                    </div>
+
+                    <div class="tva-fixe-banner">
+                        <i class="fas fa-percent"></i>
+                        <span>Taux de TVA fixe: <strong>17%</strong> (Conformément à l'énoncé du TP)</span>
+                    </div>
+
+                    <div class="calculation-card">
+                        <!-- Prix HT -->
+                        <div class="field-group floating-label">
+                            <input type="number" id="prixHT" step="0.01" min="0" placeholder=" " value="10000" oninput="calculerTVA()">
+                            <label for="prixHT"><i class="fas fa-tag"></i> Prix HT</label>
+                            <div class="field-border"></div>
+                        </div>
+
+                        <!-- COLONNE DE RÉDUCTION (VISIBLE) -->
+                        <div class="reduction-box">
+                            <div class="reduction-header">
+                                <i class="fas fa-tags"></i>
+                                <span>Réduction applicable</span>
+                            </div>
+                            <div class="reduction-content">
+                                <div class="field-group floating-label reduction-field">
+                                    <input type="number" id="reduction" step="0.01" min="0" max="100" placeholder=" " value="10" oninput="calculerTVA()">
+                                    <label for="reduction"><i class="fas fa-percent"></i> Pourcentage de réduction</label>
+                                    <div class="field-border"></div>
+                                </div>
+                                <div class="reduction-info">
+                                    <span id="typeReduction">Réduction Étudiant: 10%</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Résultats TVA -->
+                        <div class="result-combined">
+                            <div class="result-item">
+                                <i class="fas fa-calculator"></i>
+                                <span id="montantTVA">Montant TVA (17%): 1 700 FCFA</span>
+                            </div>
+                            <div class="result-item">
+                                <i class="fas fa-tag"></i>
+                                <span id="prixTTC">Prix TTC: 11 700 FCFA</span>
+                            </div>
+                            <div class="result-item">
+                                <i class="fas fa-tags"></i>
+                                <span id="montantReduction">Réduction: 1 170 FCFA</span>
+                            </div>
+                            <div class="result-item highlight-result">
+                                <i class="fas fa-check-circle"></i>
+                                <span id="prixFinal">Prix final après réduction: 10 530 FCFA</span>
+                            </div>
+                        </div>
+
+                        <!-- Résultats dans la devise choisie -->
+                        <div class="conversion-result">
+                            <div class="result-item conversion-principale">
+                                <i class="fas fa-exchange-alt"></i>
+                                <span id="prixFinalDevise">Prix final en USD: --</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ========================================== -->
+                <!--   SECTION 5 : ENREGISTREMENT (STOCKAGE)     -->
+                <!-- ========================================== -->
+                <div class="form-section">
+                    <div class="section-title">
+                        <i class="fas fa-database"></i> 
+                        <span>Enregistrement des transactions</span>
+                        <span class="script-badge">localStorage</span>
+                    </div>
+                    
+                    <div class="button-group">
+                        <button type="button" class="btn-primary" onclick="enregistrerTransaction()">
+                            <i class="fas fa-save"></i> Enregistrer cette transaction
+                        </button>
+                        <button type="button" class="btn-secondary" onclick="afficherHistorique()">
+                            <i class="fas fa-history"></i> Voir l'historique
+                        </button>
+                        <button type="button" class="btn-danger" onclick="effacerHistorique()">
+                            <i class="fas fa-trash-alt"></i> Effacer tout
+                        </button>
+                    </div>
+                    
+                    <!-- Zone d'affichage de l'historique -->
+                    <div id="historiqueContainer" class="historique-container hidden">
+                        <h4><i class="fas fa-list"></i> Historique des enregistrements</h4>
+                        <div id="listeHistorique" class="liste-historique">
+                            <!-- Rempli dynamiquement -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ========================================== -->
+                <!--   SECTION 6 : ALGORITHMES SUPPLÉMENTAIRES   -->
+                <!-- ========================================== -->
+                <div class="form-section">
+                    <div class="section-title">
+                        <i class="fas fa-brain"></i> 
+                        <span>Algorithmes supplémentaires</span>
+                    </div>
+                    
+                    <!-- Recherche dans Array -->
+                    <div class="calculation-card">
+                        <h4 class="card-subtitle">
+                            <i class="fas fa-search"></i> 
+                            Recherche dans Array
+                            <span class="script-badge">verifierPresence()</span>
+                        </h4>
+                        <div class="field-group floating-label">
+                            <input type="number" id="nombreCherche" step="1" placeholder=" " value="42">
+                            <label for="nombreCherche"><i class="fas fa-hashtag"></i> Entier à rechercher</label>
+                            <div class="field-border"></div>
+                        </div>
+                        <button type="button" class="btn-secondary" onclick="verifierPresence()">
+                            <i class="fas fa-check-double"></i> Vérifier présence
+                        </button>
+                        <div id="resultatArray" class="result-display">
+                            <i class="fas fa-database"></i> 
+                            <span>Array: [10, 25, 42, 50, 88, 100]</span>
+                        </div>
+                    </div>
+
+                    <!-- Widgets -->
+                    <div class="widgets-grid">
+                        <div class="field-group floating-label">
+                            <input type="date" id="datePicker" name="date" value="2026-04-22">
+                            <label for="datePicker"><i class="fas fa-calendar-alt"></i> Date</label>
+                        </div>
+                        
+                        <div class="field-group color-picker-wrapper">
+                            <label for="colorPicker"><i class="fas fa-palette"></i> Couleur</label>
+                            <input type="color" id="colorPicker" name="couleur" value="#0066cc">
+                        </div>
+                    </div>
+
+                    <!-- Curseur Range -->
+                    <div class="field-group range-container">
+                        <label for="rangeSlider"><i class="fas fa-sliders-h"></i> Niveau de satisfaction</label>
+                        <div class="range-value-wrapper">
+                            <input type="range" id="rangeSlider" min="0" max="100" value="85">
+                            <output for="rangeSlider" id="rangeValue">85%</output>
+                        </div>
+                    </div>
+
+                    <!-- Date du jour -->
+                    <button type="button" class="btn-primary full-width" onclick="afficherDateJour()">
+                        <i class="far fa-calendar-alt"></i> Afficher la date du jour
+                    </button>
+                    <div id="dateAujourdhui" class="date-prestige-display">
+                        <i class="far fa-calendar-check"></i> 
+                        <span>Cliquez pour afficher la date</span>
+                    </div>
+                </div>
+
+                <!-- ========================================== -->
+                <!--   PIED DE PAGE AVEC ENSEIGNANT              -->
+                <!-- ========================================== -->
+                <div class="academic-footer">
+                    <div class="footer-left">
+                        <i class="fas fa-flask"></i>
+                        <span>TP encadré par: Dr. KOTVA Samuel</span>
+                    </div>
+                    <div class="footer-right">
+                        <i class="fas fa-database"></i>
+                        <span id="compteurEnregistrements">0 enregistrement(s)</span>
+                    </div>
+                </div>
+            </form>
+        </main>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
