@@ -1,32 +1,33 @@
-# 📊 Plateforme Premium de Calcul de TVA & Conversion Multi-Devises
-> **Travail Pratique Individuel (TPE N°1) • Algorithmique & Programmation Web (INF303)**
+# ⚡️ INDUSTRIAL ARCHITECTURE: MULTI-CURRENCY TAX ENGINE
+> **TRAVAIL PRATIQUE ENCADRÉ (TPE N°1) • ARCHITECTURE APPLICATIVE & CALCUL FISCAL SYNCHRONE**
 
 <p align="center">
-  <img src="logo-universite-ngaoundere.png" width="120" alt="Université de Ngaoundéré" style="margin-right: 20px;">
-  <img src="logo-faculte-sciences.png" width="120" alt="Faculté des Sciences">
+  <img src="logo-universite-ngaoundere.png" width="125" alt="Université de Ngaoundéré" style="margin-right: 30px;">
+  <img src="logo-faculte-sciences.png" width="125" alt="Faculté des Sciences">
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Université-Ngaoundéré-🔴🔴?style=for-the-badge" alt="Univ Ndéré">
-  <img src="https://img.shields.io/badge/Faculté-des%20Sciences-blue?style=for-the-badge" alt="FS">
-  <img src="https://img.shields.io/badge/Niveau-Licence%203%20Informatique-brightgreen?style=for-the-badge" alt="L3">
+  <img src="https://img.shields.io/badge/FRAMEWORK-VANILLA%20JS%20%28ES6%2B%29-orange?style=for-the-badge&logo=javascript" alt="Vanilla JS">
+  <img src="https://img.shields.io/badge/UI%2FUX-GLASSMORPHISM%20PREMIUM-blue?style=for-the-badge" alt="UI/UX">
+  <img src="https://img.shields.io/badge/EVALUATION-INGÉNIERIE%20LOGICIELLE-brightgreen?style=for-the-badge" alt="Evaluation">
 </p>
 
 ---
 
-## 🏛️ Cadre Académique & Supervision
+## 🏛️ Superstructure Académique & Haute Direction
 
-Cette application web haut de gamme a été développée dans le cadre des travaux pratiques obligatoires du semestre 6. Elle respecte scrupuleusement le cahier des charges exigeant imposé pour l'évaluation individuelle.
+Ce module de calcul haute fidélité a été conçu, développé et optimisé suivant les directives strictes de l'unité d'enseignement avancée de la Faculté des Sciences.
 
-* **Établissement :** Université de Ngaoundéré — Faculté des Sciences
-* **Département :** Informatique (L3 Informatique)
-* **Unité d'Enseignement :** INF303 — Algorithmique & Programmation Web
-* **Enseignant Responsable :** **Dr. KOTVA Samuel**
-* **Année Académique :** 2025 - 2026
+* **Institution :** Université de Ngaoundéré (Cameroun)
+* **Faculté :** Faculté des Sciences
+* **Département :** Informatique
+* **Cursus :** Licence 3 Informatique (L3IN)
+* **Unité d'Enseignement :** INF303 — Algorithmique & Programmation Web / Ingénierie des Applications Web
+* **Directeur d'Évaluation :** **Dr.-Ing. KOTVA Samuel**
 
 ---
 
-## ⚡ Fonctionnalités Clés du Système
+## ⚙️ Core Architecture & Spécifications Métier
 
-L'interface utilise une architecture de type **Glassmorphism UI** moderne, fluide et totalement *responsive*, optimisée pour offrir une expérience utilisateur (UX) de niveau ingénieur.
+L'application implémente un pipeline de traitement de données asynchrone pour l'exécution immédiate des règles fiscales locales et internationales.
 
